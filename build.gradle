@@ -13,9 +13,14 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: 'application'
+
+run {
+    args 'sample.txt'
+}
 
 jar {
-    baseName = 'gs-relational-data-access'
+    baseName = 'gs-uploading-files'
     version =  '0.1.0'
 }
 
@@ -26,9 +31,7 @@ repositories {
 }
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter")
-    compile("org.springframework:spring-jdbc")
-    compile("com.h2database:h2")
+    compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("junit:junit")
 }
 
