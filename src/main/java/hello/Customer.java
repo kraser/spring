@@ -1,10 +1,5 @@
 package hello;
 
-import lombok.Setter;
-import lombok.Getter;
-
-@Setter
-@Getter
 public class Customer {
     private long id;
     private String firstName, lastName;
@@ -20,5 +15,17 @@ public class Customer {
         return String.format(
                 "Customer[id=%d, firstName='%s', lastName='%s']",
                 id, firstName, lastName);
+    }
+    
+    public Long getId() {
+        return this.id;
+    }
+    
+    public String getFirstName() {
+        return this.firstName;
+    }
+    
+    public String getLastName() {
+        return this.lastName;
     }
 }
