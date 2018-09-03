@@ -1,33 +1,31 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE")
-    }
-}
-
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
+apply plugin: 'application'
 
-bootJar {
-    baseName = 'gs-consuming-rest'
-    version =  '0.1.0'
-}
+mainClassName = 'hello.HelloWorld'
 
+// tag::repositories[]
 repositories {
     mavenCentral()
 }
+// end::repositories[]
 
+// tag::jar[]
+jar {
+    baseName = 'gradle-app'
+    version =  '0.1.0'
+}
+// end::jar[]
+
+// tag::dependencies[]
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter")
-    compile("org.springframework:spring-web")
-    compile("com.fasterxml.jackson.core:jackson-databind")
-    testCompile("junit:junit")
+    compile "joda-time:joda-time:2.2"
+    testCompile "junit:junit:4.12"
 }
+// end::dependencies[]
+
+// tag::wrapper[]
+// end::wrapper[
